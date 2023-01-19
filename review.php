@@ -16,7 +16,7 @@ if (isset($_POST['post_review'])) {
     if ($insert) {
         # code...
         $_SESSION['Rate'] = "Thanks For Rating";
-        header('location:review');
+        header('location:home#reviews');
     }
 }
 
