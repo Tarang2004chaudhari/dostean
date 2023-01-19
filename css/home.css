@@ -136,7 +136,7 @@ section{
     font-weight: 500;
 }
 .upi{
-    background: url(../images/dostean-pay.gif) no-repeat;
+/*     background: url(../images/dostean-pay.gif) no-repeat; */
     object-fit: cover;
     background-position: left;
 }
