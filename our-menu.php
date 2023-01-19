@@ -1,6 +1,6 @@
 <?php
     require_once 'includes/config.php';
-    
+    $menu_type = mysqli_query($db,"SELECT DISTINCT(`d_name`) FROM menu");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,10 +25,22 @@
 <?php require_once 'header.php'; ?>
 <h1 class="heading"> <span>Our menu</span> </h1>
 <div class="menu-container" data-aos="fade-right" data-aos-duration="2000" >
+    
+            <div class="select-container" style="display: flex; align-items: center;justify-content: space-around; flex-wrap: wrap;padding: 2rem 5rem;">
+                
+            <?php 
+ 
+            while($menu_type_res = mysqli_fetch_array($menu_type)){?>
+            <a href="our-menu#<?php echo $menu_type_res['d_name']; ?>" style="padding: .8rem 1.2rem; border: .1rem solid var(--black); border-radius: 1.3rem; background: #783e3c; color: #fff;font-size: 1.2rem;
+            font-weight: bold;outline: none;box-shadow:0 .5rem 1rem rgba(0,0,0,.1)"><?php echo $menu_type_res['d_name']; ?></a>
+                
+                <?php }?>
+        </div>
+    
     <img src="images/logo.png" alt="" class="back-3" style="position: fixed;left:40%;top:35%;opacity:0.1;height:35rem;width:35rem">
         <div class="menu">
             <?php 
-            $menu_type = mysqli_query($db,"SELECT DISTINCT(`d_name`) FROM menu"); 
+ 
             while($menu_type_res = mysqli_fetch_array($menu_type)){?>
             <div class="menu-column"  data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-out">
                  <h4><?php 
