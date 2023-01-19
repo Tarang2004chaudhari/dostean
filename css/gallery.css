@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600&display=swap');
+:root{
+    --brown:#5c2624;
+    --dark-brown:#411e1c;
+    --black:#444;
+    --light-brown:#783e3c;
+    --border:.3rem solid #936967;
+    --border-hover:.1rem solid var(--black);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+.gl-container{
+    position: relative;
+    min-height: auto;
+    background: transparent;
+}
+.gl-container .img-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 10px;
+}
+.gl-container .img-container .image{
+    height: 25rem;
+    width: 35rem;
+    border: 5px solid #fff;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+     overflow: hidden;
+     cursor: pointer;
+}
+.gl-container .img-container .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: .2s linear;
+}
+.gl-container .img-container .image:hover img{
+    transform: scale(1.1);
+}
+
+.gl-container .popup-img,
+.menu-container .popup-img-menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .9);
+    height: 100%;
+    width: 100%;
+    display: none;
+    z-index: 100;
+}
+.gl-container .popup-img span,
+.menu-container .popup-img-menu span{
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 6rem;
+    font-weight: bolder;
+    color: #fff;
+    cursor: pointer;
+    z-index: 100;
+}
+.gl-container .popup-img img,
+.menu-container .popup-img-menu img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: .5rem solid #fff;
+    border-radius: .5rem;
+    width: 750px;
+    object-fit: cover;
+}
+
+@media  (max-width:768px){
+    .gl-container .popup-img img,
+    .menu-container .popup-img-menu img{
+        width: 95%;
+    }
+}
